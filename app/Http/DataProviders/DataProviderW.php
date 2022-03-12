@@ -1,8 +1,11 @@
 <?php
 namespace App\Http\DataProviders;
 class DataProviderW extends Provider{ 
-    protected $url="http://192.168.1.106/app/public/providers/DataProviderW.json";
+    protected $url;
     protected $provider_name="DataProviderW";
+    public function __construct(){
+        $this->url=url("/")."/providers/DataProviderW.json";
+    }
     public function mapData(){
         $mapping=[];
         foreach($this->data as $one){
